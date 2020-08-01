@@ -1,0 +1,151 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: lightblue;
+}
+.wrap{
+	height: 200px;
+	margin-top: 200px;
+	perspective: 1000px;
+}
+.wrap .cube {
+	width: 200px;
+	height: 200px;
+	/*background: rgba(0,0,0,.5);*/
+	margin: 0 auto;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: rotateX(0deg) rotateY(0deg);
+	animation: rot 20s linear infinite;
+}
+
+
+/*大盒子*/
+.wrap .cube div {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	font-size: 20px;
+	color:red;
+	text-align: center;
+	transition:transform 0.3s ease-in;
+}
+.wrap .cube .front {
+	background:url(./img/1.jpg) no-repeat;
+	background-size: cover;
+	transform: translateZ(100px);
+}
+.wrap .cube .back {
+	background: rgba(255,255,0,.5);
+	transform:  translateZ(-100px) rotateY(180deg);
+	background:url(./img/2.jpg) no-repeat;
+	background-size: cover;
+}
+.wrap .cube .right {
+	background: rgba(0,255,0,.5);
+	transform: rotateY(90deg) translateZ(100px);
+	background:url(./img/3.jpg) no-repeat;
+	background-size: cover;
+}
+.wrap .cube .left {
+	background: rgba(0,0,255,.5);
+	transform: rotateY(-90deg) translateZ(100px);
+	background:url(./img/4.jpg) no-repeat;
+	background-size: cover;
+}
+.wrap .cube .top {
+	background: rgba(255,0,255,.5);
+	transform: rotateX(90deg) translateZ(100px);
+	background:url(./img/5.jpg) no-repeat;
+	background-size: cover;
+}
+.wrap .cube .bottom {
+	background: rgba(100,100,0,.5);
+	transform: rotateX(-90deg) translateZ(100px);
+	background:url(./img/6.jpg) no-repeat;
+	background-size: cover;
+}
+
+
+/*小盒子*/
+.wrap .cube i {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -50px;
+	font-size: 14px;
+	color:red;
+	text-align: center;
+}
+.wrap .cube .i-front {
+	background:url(./img/1.jpg) no-repeat;
+	background-size: cover;
+	transform: translateZ(50px);
+}
+.wrap .cube .i-back {
+	background: rgba(255,255,0,.5);
+	transform:  translateZ(-50px) rotateY(180deg);
+	background:url(./img/2.jpg) no-repeat;
+	background-size: cover;
+}
+.wrap .cube .i-right {
+	background: rgba(0,255,0,.5);
+	transform: rotateY(90deg) translateZ(50px);
+	background:url(./img/3.jpg) no-repeat;
+	background-size: cover;
+}
+.wrap .cube .i-left {
+	background: rgba(0,0,255,.5);
+	transform: rotateY(-90deg) translateZ(50px);
+	background:url(./img/4.jpg) no-repeat;
+	background-size: cover;
+}
+.wrap .cube .i-top {
+	background: rgba(255,0,255,.5);
+	transform: rotateX(90deg) translateZ(50px);
+	background:url(./img/5.jpg) no-repeat;
+	background-size: cover;
+}
+.wrap .cube .i-bottom {
+	background: rgba(100,100,0,.5);
+	transform: rotateX(-90deg) translateZ(50px);
+	background:url(./img/6.jpg) no-repeat;
+	background-size: cover;
+}
+
+
+/*鼠标悬停*/
+.wrap .cube:hover .front {
+	transform: translateZ(200px);
+}
+.wrap .cube:hover .back {
+	transform:  translateZ(-200px) rotateY(180deg);
+}
+.wrap .cube:hover .right {
+	transform: rotateY(90deg) translateZ(200px);
+}
+.wrap .cube:hover .left {
+	transform: rotateY(-90deg) translateZ(200px);
+}
+.wrap .cube:hover .top {
+	transform: rotateX(90deg) translateZ(200px);
+}
+.wrap .cube:hover .bottom {
+	transform: rotateX(-90deg) translateZ(200px);
+}
+
+
+/*动画*/
+@keyframes rot {
+	0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+	100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+}
